@@ -1,0 +1,5 @@
+CREATE TABLE bonos (
+  email TEXT PRIMARY KEY NOT NULL,
+  solicitado_en TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  enviado_en TEXT
+);

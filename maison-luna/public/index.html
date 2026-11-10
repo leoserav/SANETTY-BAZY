@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Descubre el catálogo de calzado femenino de SANETTY BAZY y el bono de temporada.">
+  <meta name="theme-color" content="#f8f5ed">
+  <title>SANETTY BAZY — Calzado femenino</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="shop.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#catalogo">Ir al catálogo</a>
+  <div class="promo"><button type="button" data-bonus><span aria-hidden="true">✧</span> Bono de temporada · 15% en tu primera compra <span aria-hidden="true">→</span></button></div>
+  <header class="masthead">
+    <a class="wordmark" href="./" aria-label="SANETTY BAZY, inicio">SANETTY BAZY<span>CALZADO FEMENINO</span></a>
+    <nav aria-label="Navegación principal"><a href="#catalogo">Colección</a><a href="#temporada">Bono de temporada</a></nav>
+    <button id="open-cart" class="bag" type="button" aria-haspopup="dialog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 8h14l2 13H3L5 8Z"/><path d="M8.5 10V6a3.5 3.5 0 0 1 7 0v4"/></svg><span>Bolsa</span><span id="cart-count">0</span></button>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> COLECCIÓN 01 · TEMPORADA</div>
+        <h1 id="hero-title">A tu propio<br> <em>paso.</em></h1>
+        <p>Del primer café a la última cita. Seis modelos para acompañar tus días a tu ritmo.</p>
+        <a class="button primary" href="#catalogo">Explorar colección <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="film">
+        <video id="reel" poster="assets/aurora.webp" src="assets/coleccion.webm" preload="metadata" muted loop playsinline aria-label="Video sin audio con los seis modelos de la colección"></video>
+        <span class="film-label"><span></span> EL FILM DE LA COLECCIÓN</span>
+        <span class="film-name" id="film-name" aria-hidden="true">01 / 06 · AURORA</span>
+        <button id="toggle-reel" type="button" aria-label="Reproducir video"><span aria-hidden="true">▶</span></button>
+      </div>
+    </section>
+    <section class="catalog wrap" id="catalogo" aria-labelledby="catalog-title">
+      <div class="eyebrow"><span></span> EL CATÁLOGO</div>
+      <h2 id="catalog-title">La <em>colección</em></h2>
+      <div class="filter-row">
+        <div id="filters" class="filters" aria-label="Filtrar por tipo de calzado"></div>
+        <span id="model-count" role="status"></span>
+      </div>
+      <div class="grid" id="product-grid"></div>
+    </section>
+    <section class="season" id="temporada" aria-labelledby="season-title">
+      <div class="season-image" aria-hidden="true"></div>
+      <div class="season-copy">
+        <div class="eyebrow"><span></span> EDICIÓN DE TEMPORADA</div>
+        <h2 id="season-title">Un bono para<br>tu <em>primer par.</em></h2>
+        <p>Deja tu correo para solicitar tu código de <strong>15% de descuento</strong> para tu primera compra.</p>
+        <button type="button" class="button light" data-bonus>Quiero mi bono <span aria-hidden="true">↗</span></button>
+      </div>
+    </section>
+  </main>
+  <footer class="masthead footer"><a class="wordmark" href="./">SANETTY BAZY<span>CALZADO FEMENINO</span></a><span>Catálogo de muestra · Precios en soles</span><a href="#catalogo">Volver al catálogo ↑</a></footer>
+
+  <dialog id="product-dialog" aria-labelledby="product-title"><div id="product-detail"></div></dialog>
+  <dialog id="cart-dialog" class="drawer" aria-labelledby="cart-title">
+    <div class="drawer-head"><h2 id="cart-title">Tu <em>bolsa</em></h2><button type="button" class="close" data-close aria-label="Cerrar bolsa">×</button></div>
+    <div id="cart-items"></div>
+    <div class="cart-summary" id="cart-summary" hidden>
+      <form id="coupon-form" class="inline-form">
+        <label class="sr-only" for="coupon">Código de descuento</label><input id="coupon" placeholder="Código de descuento" autocomplete="off" maxlength="30">
+        <button type="submit">Aplicar</button>
+      </form>
+      <p id="coupon-status" class="form-status" role="status"></p>
+      <div class="total"><span>Subtotal</span><strong id="subtotal"></strong></div>
+      <div class="total" id="discount-row" hidden><span>Bono de temporada (15%)</span><strong id="discount"></strong></div>
+      <div class="total grand"><span>Total estimado</span><strong id="total"></strong></div>
+      <p class="fine">Tienda de demostración. Puedes armar tu bolsa y probar el bono.</p>
+    </div>
+  </dialog>
+  <dialog id="bonus-dialog" class="bonus-dialog" aria-labelledby="bonus-title">
+    <div class="bonus-photo" aria-hidden="true"></div>
+    <div class="bonus-content">
+      <button type="button" class="close" data-close aria-label="Cerrar promoción">×</button>
+      <div class="eyebrow"><span></span> BONO DE TEMPORADA</div>
+      <h2 id="bonus-title">Tu primer par,<br><em>con 15% menos.</em></h2>
+      <p>Deja tu correo para solicitar el código de tu primera compra.</p>
+      <form id="bonus-form">
+        <label for="email">Correo electrónico</label>
+        <input id="email" type="email" placeholder="tu@correo.com" autocomplete="email" maxlength="254" required>
+        <label class="consent"><input type="checkbox" required> Acepto que SANETTY BAZY guarde mi correo y me envíe el bono solicitado.</label>
+        <button class="button primary" type="submit">Solicitar mi bono <span aria-hidden="true">→</span></button>
+        <p id="bonus-status" class="form-status" role="status"></p>
+      </form>
+    </div>
+  </dialog>
+  <div class="toast" id="toast" role="status" hidden></div>
+</body>
+</html>
